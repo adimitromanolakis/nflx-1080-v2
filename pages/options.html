@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Netflix 1080p Options</title>
+        <link rel="stylesheet" href="picnic.min.css">
+        <style>
+            html {
+                height: auto;
+            }
+
+            body {
+                margin: 20px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex">
+            <div class="full">
+                <label>
+                    <input type="checkbox" id="use-51" />
+                    <span class="checkable">Use 5.1 audio when available.</span>
+                </label>
+            </div>
+            <div class="full">
+                <label>
+                    <input type="checkbox" id="set-max-bitrate" />
+                    <span class="checkable">Automatically select best bitrate available</span>
+                </label>
+            </div>
+            <div class="full">
+                <label>
+                    <input type="checkbox" id="disable-vp9" />
+                    <span class="checkable">Disable VP9 codec</span>
+                </label>
+            </div>
+            <div class="full">
+                <label>
+                    <input type="checkbox" id="disable-avchigh" />
+                    <span class="checkable">Disable AVChigh codec</span>
+                </label>
+            </div>
+            <div class="full">
+                <label>
+                    <input type="checkbox" id="show-all-subs" />
+                    <span class="checkable">Show all subtitle tracks</span>
+                </label>
+            </div>
+            <div class="full">
+                <button id="save">Save</button>
+                <span id="options-saved" class="label success" style="font-size: 16px; display: none">Options saved!</span>
+            </div>
+        </div>
+
+        <script src="options.js"></script>
+    </body>
+</html>
