@@ -22137,82 +22137,22 @@ T6af2.Y54 = function () {
 
 								console.log("Netflix profiles:", I);
 
-
-/*
-0
-: 
-"heaac-2-dash"
-1
-: 
-"heaac-2hq-dash"
-2
-: 
-"playready-h264mpl30-dash"
-3
-: 
-"playready-h264mpl31-dash"
-4
-: 
-"playready-h264hpl30-dash"
-5
-: 
-"playready-h264hpl31-dash"
-6
-: 
-"playready-h264mpl40-dash"
-7
-: 
-"playready-h264hpl40-dash"
-8
-: 
-"h264hpl30-dash-playready-live"
-9
-: 
-"h264hpl31-dash-playready-live"
-10
-: 
-"imsc1.1"
-11
-: 
-"dfxp-ls-sdh"
-12
-: 
-"simplesdh"
-13
-: 
-"nflx-cmisc"
-14
-: 
-"iso_23001_18-dash-live"
-15
-: 
-"BIF240"
-16
-: 
-"BIF320"
-*/
-
                                 // MARKER_PROFILES
                                 let profiles = [
-									
-									"heaac-2hq-dash",
-									"playready-h264hpl30-dash",
-									"playready-h264hpl31-dash",
-									"playready-h264hpl40-dash",
                                     "playready-h264mpl30-dash",
                                     "playready-h264mpl31-dash",
                                     "playready-h264mpl40-dash",
                                     "heaac-2-dash",
                                     "heaac-2hq-dash",
-                                    //"dfxp-ls-sdh",
-                                    //"simplesdh",
-                                    //"nflx-cmisc",
-                                    //"imsc1.1",
+                                    "dfxp-ls-sdh",
+                                    "simplesdh",
+                                    "nflx-cmisc",
+                                    "imsc1.1",
                                     "BIF240",
                                     "BIF320"
                                 ];
 
-                                if(0) if (!window.globalOptions.disableVP9) {
+                                if (!window.globalOptions.disableVP9) {
                                     profiles.push(
                                         "vp9-profile0-L21-dash-cenc",
                                         "vp9-profile0-L30-dash-cenc",
@@ -22223,12 +22163,12 @@ T6af2.Y54 = function () {
                                     console.log("VP9 disabled");
                                 }
 
-                                if(0) if (window.globalOptions.use6Channels) {
+                                if (window.globalOptions.use6Channels) {
                                     profiles.push("heaac-5.1-dash");
                                     console.log("5.1 support enabled");
                                 }
 
-                                if(1) if (!window.globalOptions.disableAVChigh) {
+                                if (!window.globalOptions.disableAVChigh) {
                                     profiles.push("playready-h264hpl30-dash", "playready-h264hpl31-dash", "playready-h264hpl40-dash");
                                     profiles.push("h264hpl30-dash-playready-live", "h264hpl31-dash-playready-live", "h264hpl40-dash-playready-live");
 									profiles.push("h264mpl30-dash-playready-prk-qc", "h264mpl31-dash-playready-prk-qc", "h264mpl40-dash-playready-prk-qc");
@@ -22243,7 +22183,6 @@ T6af2.Y54 = function () {
                                 }
 
                                 console.log("drmType:", K);
-								// K = "playready"
 
 								console.log("Final profiles:", profiles);
 
@@ -22412,8 +22351,6 @@ T6af2.Y54 = function () {
 								q = r.next().value;
 								v = r.next().value;
 								r = r.next().value;
-								// alert(JSON.stringify( v.sga() ))
-
 								return [{
 									viewableId: g.K,
 									packageId: m.pq,
@@ -33617,6 +33554,7 @@ T6af2.Y54 = function () {
 								b.He.Rc(b.en, l);
 							});
 							d("keydown", function (l) {
+								// alert(l);
 								b.He.Rc(b.nH, l);
 							});
 							d("resize", function () {
@@ -34614,7 +34552,6 @@ T6af2.Y54 = function () {
 								if (f.Ma.get(z.Ds).Wza || ea.istestaccount)((0, m.Ve)(ea, ja), la = ja);
 							})(D);
 							b.config = {};
-							console.log("P=" + JSON.stringify( T.jh ))
 							aa = {
 								y2b: E(K, H("enableXHEAAC"), !1),
 								P1b: E(K, H("enableDDPlus20"), !0),
@@ -34622,24 +34559,24 @@ T6af2.Y54 = function () {
 								K1: E(K, H("enableDDPlus51"), !1),
 								Sea: E(K, H("enableDDPlusAtmos"), !1),
 								a2b: E(K, H("enableLSSDH"), !0),
-								X1b: E(K, H("enableHEVC"), 1),
+								X1b: E(K, H("enableHEVC"), !1),
 								Yqb: E(K, H("overrideEnableHEVC"), !1),
-								eEa: E(K, H("enableHDR"), 1),
+								eEa: E(K, H("enableHDR"), !1),
 								Xqb: E(K, H("overrideEnableHDR"), !1),
 								Wqb: E(K, H("overrideEnableDV"), !1),
 								uS: E(K, H("enableAVCHigh"), T.uS),
 								Uqb: E(K, H("overrideEnableAVCHigh"), !1),
 								$Da: E(K, H("enableAVCHighLive"), T.$Da),
 								Vqb: E(K, H("overrideEnableAVCHighLive"), !0),
-								u2b: E(K, H("enableVP9"), 0),
-								Zqb: E(K, H("overrideEnableVP9"), 0),
-								D1b: E(K, H("enableAV1"), 1),
-								Sqb: E(K, H("overrideEnableAV1"), 1),
-								E1b: E(K, H("enableAV1HDR10P"), 1),
-								Tqb: E(K, H("overrideEnableAV1HDR10P"), 1),
+								u2b: E(K, H("enableVP9"), !1),
+								Zqb: E(K, H("overrideEnableVP9"), !1),
+								D1b: E(K, H("enableAV1"), !1),
+								Sqb: E(K, H("overrideEnableAV1"), !1),
+								E1b: E(K, H("enableAV1HDR10P"), !1),
+								Tqb: E(K, H("overrideEnableAV1HDR10P"), !1),
 								jlc: E(K, H("overrideEnableXHEAAC"), !1),
 								hlc: E(K, "overrideEnableAllAudioProfiles", 1),
-								ilc: E(K, "overrideEnableAllVideoProfiles", !1),
+								ilc: E(K, "overrideEnableAllVideoProfiles", 1),
 								j2b: E(K, H("enablePRK"), !1),
 								Q1b: E(K, H("enableDV"), !1),
 								Y1b: E(K, H("enableHWDRM"), !1),
@@ -34648,7 +34585,7 @@ T6af2.Y54 = function () {
 								lG: E(X, H("audioProfiles"), T.lG),
 								W1b: E(K, H("enableFullHdForSWDRM"), !1),
 								V1b: E(K, H("enableFullHdForHWDRM"), !1),
-								t2b: E(K, H("enableUHD"), 0),
+								t2b: E(K, H("enableUHD"), 1),
 								Kna: E(G, "videoCapabilityDetectorType", g.wp.QB),
 								uAa: E(G, "audioCapabilityDetectorType", g.MB.QB),
 								jh: E(X, H("videoProfiles"), T.jh),
@@ -34662,7 +34599,7 @@ T6af2.Y54 = function () {
 								},
 								endpoint: E(K, H("endpoint"), !1),
 								version: E(J, "version", "unknown"),
-								Z1b: E(K, H("enableHdcp"), 1),
+								Z1b: E(K, H("enableHdcp"), !1),
 								Rv: E(K, H("prepareCadmium"), !1),
 								cPb: E(K, H("acceptManifestOnPrepareItemParams"), !0),
 								inc: E(M, "ppmconfig", {
